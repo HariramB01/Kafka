@@ -10,7 +10,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 public class ProducerHandler implements EventHandler {
 
 
-//    private static final Logger LOGGER = LoggerFactory.getLogger(ProducerHandler.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProducerHandler.class);
 
     private KafkaTemplate<String, String> kafkaTemplate;
     private String topic;
@@ -33,7 +33,7 @@ public class ProducerHandler implements EventHandler {
     @Override
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
         // for printing in the console
-//        LOGGER.info(String.format("Message : %s", messageEvent.getData()));
+        LOGGER.info(String.format("Message : %s", messageEvent.getData()));
         //sending the message to the topic
         kafkaTemplate.send(topic,messageEvent.getData());
 

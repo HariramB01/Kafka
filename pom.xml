@@ -15,6 +15,7 @@
 	<description>implementing multi module springboot kafka project</description>
 	<modules>
 		<module>KafkaProducer</module>
+		<module>KafkaConsumer</module>
 	</modules>
 	<packaging>pom</packaging>
 	<url/>
