@@ -32,9 +32,7 @@ public class ProducerHandler implements EventHandler {
 
     @Override
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
-        // for printing in the console
         LOGGER.info(String.format("Message : %s", messageEvent.getData()));
-        //sending the message to the topic
         kafkaTemplate.send(topic,messageEvent.getData());
 
     }
